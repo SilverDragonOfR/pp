@@ -6,7 +6,8 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home>
+{
 
   String a1 = "";
   String a2 = "";
@@ -31,7 +32,8 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
         title: Text("Tic Tac Toe"),
@@ -51,10 +53,12 @@ class _HomeState extends State<Home> {
                           if(a1=="") {
                             if (turn == "x") {
                               a1 = "x";
+                              game[0][0] = "x";
                               turn = "o";
                             }
                             else {
                               a1 = "o";
+                              game[0][0] = "o";
                               turn = "x";
                             }
                           }
@@ -72,10 +76,12 @@ class _HomeState extends State<Home> {
                           if(a2=="") {
                             if (turn == "x") {
                               a2 = "x";
+                              game[0][1] = "x";
                               turn = "o";
                             }
                             else {
                               a2 = "o";
+                              game[0][1] = "o";
                               turn = "x";
                             }
                           }
@@ -93,10 +99,12 @@ class _HomeState extends State<Home> {
                           if(a3=="") {
                             if (turn == "x") {
                               a3 = "x";
+                              game[0][2] = "x";
                               turn = "o";
                             }
                             else {
                               a3 = "o";
+                              game[0][2] = "o";
                               turn = "x";
                             }
                           }
@@ -118,10 +126,12 @@ class _HomeState extends State<Home> {
                           if(b1=="") {
                             if (turn == "x") {
                               b1 = "x";
+                              game[1][0] = "x";
                               turn = "o";
                             }
                             else {
                               b1 = "o";
+                              game[1][0] = "o";
                               turn = "x";
                             }
                           }
@@ -139,10 +149,12 @@ class _HomeState extends State<Home> {
                           if(b2=="") {
                             if (turn == "x") {
                               b2 = "x";
+                              game[1][1] = "x";
                               turn = "o";
                             }
                             else {
                               b2 = "o";
+                              game[1][1] = "o";
                               turn = "x";
                             }
                           }
@@ -160,10 +172,12 @@ class _HomeState extends State<Home> {
                           if(b3=="") {
                             if (turn == "x") {
                               b3 = "x";
+                              game[1][2] = "x";
                               turn = "o";
                             }
                             else {
                               b3 = "o";
+                              game[1][2] = "o";
                               turn = "x";
                             }
                           }
@@ -185,10 +199,12 @@ class _HomeState extends State<Home> {
                           if(c1=="") {
                             if (turn == "x") {
                               c1 = "x";
+                              game[2][0] = "x";
                               turn = "o";
                             }
                             else {
                               c1 = "o";
+                              game[2][0] = "0";
                               turn = "x";
                             }
                           }
@@ -206,14 +222,17 @@ class _HomeState extends State<Home> {
                           if(c2=="") {
                             if (turn == "x") {
                               c2 = "x";
+                              game[2][1] = "x";
                               turn = "o";
                             }
                             else {
                               c2 = "o";
+                              game[2][1] = "o";
                               turn = "x";
                             }
                           }
                           setState(() {
+                            check(game);
                           });
                         },
                       ),
@@ -226,14 +245,17 @@ class _HomeState extends State<Home> {
                           if(c3=="") {
                             if (turn == "x") {
                               c3 = "x";
+                              game[2][2] = "x";
                               turn = "o";
                             }
                             else {
                               c3 = "o";
+                              game[2][2] = "o";
                               turn = "x";
                             }
                           }
                           setState(() {
+                            check(game);
                           });
                         },
                       ),
@@ -245,5 +267,29 @@ class _HomeState extends State<Home> {
           ),
       )
     );
+  }
+
+  void check(game)
+  {
+    bool isComplete = true;
+    for(int i=0;i<3;i++){
+      for(int j=0;j<3;j++){
+        if(game[i][j]=="") isComplete = false;
+      }
+    }
+    bool isWinner = false;
+    String winner = "";
+    if( (game[0][0]=="x" && game[0][1]=="x" && game[0][2]=="x") ||
+        (game[1][0]=="x" && game[1][1]=="x" && game[1][2]=="x") ||
+        (game[2][0]=="x" && game[2][1]=="x" && game[2][2]=="x") ||
+        (game[0][0]=="x" && game[1][0]=="x" && game[2][0]=="x") ||
+        (game[0][1]=="x" && game[1][1]=="x" && game[2][1]=="x") ||
+        (game[0][2]=="x" && game[1][2]=="x" && game[2][2]=="x") ||
+    )
+
+    if(isComplete){
+
+    }
+
   }
 }
