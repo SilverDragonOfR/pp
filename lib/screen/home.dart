@@ -67,13 +67,43 @@ class _HomeState extends State<Home>
           }, child: Text("New Game")),
           ElevatedButton(onPressed: ()
           {
-            if(history.length>=1) {
+            if(history.length>=1 && !isDisabled) {
               List last = history[history.length-1];
               history.removeLast();
 
               game[last[0]][last[1]] = "";
               if(turn=="x") {
-
+                turn = "o";
+              }
+              else{
+                turn = "x";
+              }
+              if(last[0]==0 && last[1]==0){
+                a1 = "";
+              }
+              else if(last[0]==0 && last[1]==1){
+                a2 = "";
+              }
+              else if(last[0]==0 && last[1]==2){
+                a3 = "";
+              }
+              else if(last[0]==1 && last[1]==0){
+                b1 = "";
+              }
+              else if(last[0]==1 && last[1]==1){
+                b2 = "";
+              }
+              else if(last[0]==1 && last[1]==2){
+                b3 = "";
+              }
+              else if(last[0]==2 && last[1]==0){
+                c1 = "";
+              }
+              else if(last[0]==2 && last[1]==1){
+                c2 = "";
+              }
+              else if(last[0]==2 && last[1]==2){
+                c3 = "";
               }
 
               setState(() {
