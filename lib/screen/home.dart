@@ -19,6 +19,8 @@ class _HomeState extends State<Home>
   String c2 = "";
   String c3 = "";
 
+  String OverText = "";
+
   double s = 90;
   bool isDisabled = false;
   List<List<String>> game = [];
@@ -39,12 +41,37 @@ class _HomeState extends State<Home>
       appBar: AppBar(
         title: Text("Tic Tac Toe"),
         backgroundColor: Colors.indigoAccent,
+        actions: [
+          ElevatedButton(onPressed: ()
+          {
+            a1 = "";
+            a2 = "";
+            a3 = "";
+            b1 = "";
+            b2 = "";
+            b3 = "";
+            c1 = "";
+            c2 = "";
+            c3 = "";
+
+            setState(){}
+          }, child: Text("New Game"))
+        ],
       ),
       body: Center(
-        child: Container(
-            child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children:
+          [
+            Text("Move of: "+turn),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: s, height: s,
@@ -119,6 +146,8 @@ class _HomeState extends State<Home>
                   ],
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: s, height: s,
@@ -192,6 +221,8 @@ class _HomeState extends State<Home>
                   ],
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: s, height: s,
@@ -265,8 +296,10 @@ class _HomeState extends State<Home>
                   ],
                 )
               ],
-            )
-          ),
+            ),
+            Text(OverText)
+          ],
+        ),
       )
     );
   }
@@ -310,24 +343,21 @@ class _HomeState extends State<Home>
 
     if(isComplete){
       if(isWinner){
-        print("Winner is: "+winner);
 
         isDisabled = true;
+        OverText = winner+" wins!";
       }
       else{
-        print("draw");
 
+        OverText = "Draw";
         isDisabled = true;
       }
     }
     else{
       if(isWinner){
-        print("Winner is: "+winner);
 
+        OverText = winner+" wins!";
         isDisabled = true;
-      }
-      else{
-        print("continue");
       }
     }
 
