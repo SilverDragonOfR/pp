@@ -25,6 +25,8 @@ class _HomeState extends State<Home>
   bool isDisabled = false;
   List<List<String>> game = [];
 
+  List history = [];
+
   String turn = "o";
 
   @override
@@ -59,10 +61,25 @@ class _HomeState extends State<Home>
             isDisabled = false;
             game = [[a1,a2,a3],[b1,b2,b3],[c1,c2,c3]];
             turn = "o";
+            history = [];
             setState(() {
-
             });
-          }, child: Text("New Game"))
+          }, child: Text("New Game")),
+          ElevatedButton(onPressed: ()
+          {
+            if(history.length>=1) {
+              List last = history[history.length-1];
+              history.removeLast();
+
+              game[last[0]][last[1]] = "";
+              if(turn=="x") {
+
+              }
+
+              setState(() {
+              });
+            }
+          }, child: Text("Undo"))
         ],
       ),
       body: Center(
@@ -90,11 +107,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               a1 = "x";
                               game[0][0] = "x";
+                              history.add([0,0]);
                               turn = "o";
                             }
                             else {
                               a1 = "o";
                               game[0][0] = "o";
+                              history.add([0,0]);
                               turn = "x";
                             }
                           }
@@ -113,11 +132,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               a2 = "x";
                               game[0][1] = "x";
+                              history.add([0,1]);
                               turn = "o";
                             }
                             else {
                               a2 = "o";
                               game[0][1] = "o";
+                              history.add([0,1]);
                               turn = "x";
                             }
                           }
@@ -136,11 +157,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               a3 = "x";
                               game[0][2] = "x";
+                              history.add([0,2]);
                               turn = "o";
                             }
                             else {
                               a3 = "o";
                               game[0][2] = "o";
+                              history.add([0,2]);
                               turn = "x";
                             }
                           }
@@ -165,11 +188,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               b1 = "x";
                               game[1][0] = "x";
+                              history.add([1,0]);
                               turn = "o";
                             }
                             else {
                               b1 = "o";
                               game[1][0] = "o";
+                              history.add([1,0]);
                               turn = "x";
                             }
                           }
@@ -188,11 +213,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               b2 = "x";
                               game[1][1] = "x";
+                              history.add([1,1]);
                               turn = "o";
                             }
                             else {
                               b2 = "o";
                               game[1][1] = "o";
+                              history.add([1,1]);
                               turn = "x";
                             }
                           }
@@ -211,11 +238,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               b3 = "x";
                               game[1][2] = "x";
+                              history.add([1,2]);
                               turn = "o";
                             }
                             else {
                               b3 = "o";
                               game[1][2] = "o";
+                              history.add([1,2]);
                               turn = "x";
                             }
                           }
@@ -240,11 +269,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               c1 = "x";
                               game[2][0] = "x";
+                              history.add([2,0]);
                               turn = "o";
                             }
                             else {
                               c1 = "o";
                               game[2][0] = "0";
+                              history.add([2,0]);
                               turn = "x";
                             }
                           }
@@ -263,11 +294,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               c2 = "x";
                               game[2][1] = "x";
+                              history.add([2,1]);
                               turn = "o";
                             }
                             else {
                               c2 = "o";
                               game[2][1] = "o";
+                              history.add([2,1]);
                               turn = "x";
                             }
                           }
@@ -286,11 +319,13 @@ class _HomeState extends State<Home>
                             if (turn == "x") {
                               c3 = "x";
                               game[2][2] = "x";
+                              history.add([2,2]);
                               turn = "o";
                             }
                             else {
                               c3 = "o";
                               game[2][2] = "o";
+                              history.add([2,2]);
                               turn = "x";
                             }
                           }
