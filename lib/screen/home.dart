@@ -20,6 +20,7 @@ class _HomeState extends State<Home>
   String c3 = "";
 
   double s = 90;
+  bool isDisabled = false;
   List<List<String>> game = [];
 
   String turn = "o";
@@ -48,8 +49,9 @@ class _HomeState extends State<Home>
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
+
                         child: Text(a1),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(a1=="") {
                             if (turn == "x") {
                               a1 = "x";
@@ -72,7 +74,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(a2),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(a2=="") {
                             if (turn == "x") {
                               a2 = "x";
@@ -95,7 +97,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(a3),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(a3=="") {
                             if (turn == "x") {
                               a3 = "x";
@@ -122,7 +124,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(b1),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(b1=="") {
                             if (turn == "x") {
                               b1 = "x";
@@ -145,7 +147,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(b2),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(b2=="") {
                             if (turn == "x") {
                               b2 = "x";
@@ -168,7 +170,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(b3),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(b3=="") {
                             if (turn == "x") {
                               b3 = "x";
@@ -195,7 +197,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(c1),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(c1=="") {
                             if (turn == "x") {
                               c1 = "x";
@@ -218,7 +220,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(c2),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(c2=="") {
                             if (turn == "x") {
                               c2 = "x";
@@ -241,7 +243,7 @@ class _HomeState extends State<Home>
                       width: s, height: s,
                       child: ElevatedButton(
                         child: Text(c3),
-                        onPressed: (){
+                        onPressed: isDisabled ? null : (){
                           if(c3=="") {
                             if (turn == "x") {
                               c3 = "x";
@@ -285,10 +287,48 @@ class _HomeState extends State<Home>
         (game[0][0]=="x" && game[1][0]=="x" && game[2][0]=="x") ||
         (game[0][1]=="x" && game[1][1]=="x" && game[2][1]=="x") ||
         (game[0][2]=="x" && game[1][2]=="x" && game[2][2]=="x") ||
+        (game[0][0]=="x" && game[1][1]=="x" && game[2][2]=="x") ||
+        (game[0][2]=="x" && game[1][1]=="x" && game[2][0]=="x")
+    ){
+      isWinner = true;
+      winner = "x";
+    }
+
+    if( (game[0][0]=="o" && game[0][1]=="o" && game[0][2]=="o") ||
+        (game[1][0]=="o" && game[1][1]=="o" && game[1][2]=="o") ||
+        (game[2][0]=="o" && game[2][1]=="o" && game[2][2]=="o") ||
+        (game[0][0]=="o" && game[1][0]=="o" && game[2][0]=="o") ||
+        (game[0][1]=="o" && game[1][1]=="o" && game[2][1]=="o") ||
+        (game[0][2]=="o" && game[1][2]=="o" && game[2][2]=="o") ||
+        (game[0][0]=="o" && game[1][1]=="o" && game[2][2]=="o") ||
+        (game[0][2]=="o" && game[1][1]=="o" && game[2][0]=="o")
     )
+    {
+      isWinner = true;
+      winner = "o";
+    }
 
     if(isComplete){
+      if(isWinner){
+        print("Winner is: "+winner);
 
+        isDisabled = true;
+      }
+      else{
+        print("draw");
+
+        isDisabled = true;
+      }
+    }
+    else{
+      if(isWinner){
+        print("Winner is: "+winner);
+
+        isDisabled = true;
+      }
+      else{
+        print("continue");
+      }
     }
 
   }
