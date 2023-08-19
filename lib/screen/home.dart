@@ -435,7 +435,6 @@ class _HomeState extends State<Home>
     }
     else{
       if(isWinner){
-
         OverText = winner+" wins!";
         isDisabled = true;
       }
