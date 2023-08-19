@@ -65,6 +65,7 @@ class _HomeState extends State<Home>
             setState(() {
             });
           }, child: Text("New Game")),
+          SizedBox(width: 20,),
           ElevatedButton(onPressed: ()
           {
             if(history.length>=1 && !isDisabled) {
@@ -109,7 +110,8 @@ class _HomeState extends State<Home>
               setState(() {
               });
             }
-          }, child: Text("Undo"))
+          }, child: Text("Undo")),
+          SizedBox(width: 20,),
         ],
       ),
       body: Center(
@@ -118,7 +120,7 @@ class _HomeState extends State<Home>
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:
           [
-            Text("Move of: "+turn),
+            Text("Move of: "+turn, style: TextStyle(fontSize: 30),),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -377,7 +379,7 @@ class _HomeState extends State<Home>
                 )
               ],
             ),
-            Text(OverText)
+            Text(OverText, style: TextStyle(fontSize: 30),)
           ],
         ),
       )
