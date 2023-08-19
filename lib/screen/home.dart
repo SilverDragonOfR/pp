@@ -41,7 +41,8 @@ class _HomeState extends State<Home>
       appBar: AppBar(
         title: Text("Tic Tac Toe"),
         backgroundColor: Colors.indigoAccent,
-        actions: [
+        actions:
+        [
           ElevatedButton(onPressed: ()
           {
             a1 = "";
@@ -54,7 +55,13 @@ class _HomeState extends State<Home>
             c2 = "";
             c3 = "";
 
-            setState(){}
+            OverText = "";
+            isDisabled = false;
+            game = [[a1,a2,a3],[b1,b2,b3],[c1,c2,c3]];
+            turn = "o";
+            setState(() {
+
+            });
           }, child: Text("New Game"))
         ],
       ),
