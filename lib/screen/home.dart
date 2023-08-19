@@ -19,8 +19,16 @@ class _HomeState extends State<Home> {
   String c3 = "";
 
   double s = 90;
+  List<List<String>> game = [];
 
   String turn = "o";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    game = [[a1,a2,a3],[b1,b2,b3],[c1,c2,c3]];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,29 +48,62 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(
                         child: Text(a1),
                         onPressed: (){
-                          if(a1==""){
-                            if(turn=="x"){
-                              a1="o"
+                          if(a1=="") {
+                            if (turn == "x") {
+                              a1 = "x";
+                              turn = "o";
                             }
-                            else{
-
+                            else {
+                              a1 = "o";
+                              turn = "x";
                             }
                           }
+                          setState(() {
+                            check(game);
+                          });
                         },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(a2),
+                        onPressed: (){
+                          if(a2=="") {
+                            if (turn == "x") {
+                              a2 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              a2 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(a3),
+                        onPressed: (){
+                          if(a3=="") {
+                            if (turn == "x") {
+                              a3 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              a3 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                   ],
@@ -72,22 +113,64 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(b1),
+                        onPressed: (){
+                          if(b1=="") {
+                            if (turn == "x") {
+                              b1 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              b1 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(b2),
+                        onPressed: (){
+                          if(b2=="") {
+                            if (turn == "x") {
+                              b2 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              b2 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(b3),
+                        onPressed: (){
+                          if(b3=="") {
+                            if (turn == "x") {
+                              b3 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              b3 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                   ],
@@ -97,22 +180,62 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(c1),
+                        onPressed: (){
+                          if(c1=="") {
+                            if (turn == "x") {
+                              c1 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              c1 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                            check(game);
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(c2),
+                        onPressed: (){
+                          if(c2=="") {
+                            if (turn == "x") {
+                              c2 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              c2 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                          });
+                        },
                       ),
                     ),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
-                        child: Text(a1),
-                        onPressed: (){},
+                        child: Text(c3),
+                        onPressed: (){
+                          if(c3=="") {
+                            if (turn == "x") {
+                              c3 = "x";
+                              turn = "o";
+                            }
+                            else {
+                              c3 = "o";
+                              turn = "x";
+                            }
+                          }
+                          setState(() {
+                          });
+                        },
                       ),
                     ),
                   ],
