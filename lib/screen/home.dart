@@ -153,6 +153,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
@@ -178,6 +179,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
@@ -205,6 +207,7 @@ class _HomeState extends State<Home>
                     ),
                   ],
                 ),
+                SizedBox(width: 30,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -234,6 +237,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
@@ -259,6 +263,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
@@ -286,6 +291,7 @@ class _HomeState extends State<Home>
                     ),
                   ],
                 ),
+                SizedBox(width: 30,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -315,6 +321,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
@@ -340,6 +347,7 @@ class _HomeState extends State<Home>
                         },
                       ),
                     ),
+                    SizedBox(height: 30,),
                     SizedBox(
                       width: s, height: s,
                       child: ElevatedButton(
