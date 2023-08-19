@@ -120,7 +120,7 @@ class _HomeState extends State<Home>
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:
           [
-            Text("Move of: "+turn, style: TextStyle(fontSize: 30),),
+            isDisabled ? Text("") :Text("Move of: "+turn, style: TextStyle(fontSize: 30),),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
