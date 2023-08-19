@@ -1,6 +1,6 @@
 # pp
 
-A new Flutter project.
+A new Flutter project. Checking out
 
 ## Getting Started
 
